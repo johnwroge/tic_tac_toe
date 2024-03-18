@@ -92,15 +92,17 @@ while True:
         # if the spot has not already been taken, update that position
         if board[row - 1][col - 1] == "-":
             board[row - 1][col - 1] = player
+        # otherwise ask for a new position
         else:
             print('\n')
             print("That position is already taken. Please enter another position!")
             continue
         current = not current 
+    # catch any invalid inputs that cause a ValueError
     except ValueError:
         print('\n')
         print(f"That is not a valid position, please try again!")
-
+    
     if 'Exit' == data:
         break
     
